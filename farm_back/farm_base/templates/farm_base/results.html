@@ -1,0 +1,25 @@
+<html>
+    <h1>Search Results</h1>
+    <body>
+        <table>
+            <tr>
+                <th>Farm Name</th>
+                <th>Owner ID</th>
+                <th>Centroid</th>
+                <th>Area</th>
+                <th>Municipality</th>
+                <th>State</th>
+            </tr>
+            {% for farm in object_list %}
+            <tr>
+                <th><a href="{% url 'farm_base:details' farm.id %}" id="{{farm.id}}">{{farm.name}}</a></th>
+                <th>{{farm.owner.id}}</th>
+                <th>{{farm.centroid}}</th>
+                <th>{{farm.area}}</th>
+                <th>{{farm.municipality}}</th>
+                <th>{{farm.state}}</th>
+            </tr>
+            {% endfor %}    
+        </table>
+    </body>
+</html>
